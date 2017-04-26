@@ -5,3 +5,15 @@ h1 {
 .CarouselWidth {
   width: 80%;
 }
+
+#TableEpisodios tr th{
+  border: double;
+}
+
+#TableEpisodios tr td{
+  border: double;
+}
+
+#TableEpisodios tr th:first-child{
+  width: 89%;
+}
