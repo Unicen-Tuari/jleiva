@@ -8,7 +8,6 @@
     <title>Space Dandy</title>
     <!-- Bootstrap --><!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,12 +33,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="#Galeria">Galeria</a></li>
-            <li><a href="#Comentarios">Comentarios</a></li>
             <li><a href="#ListadoPersj">Lista de personajes</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Temporadas <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="Temporada1.html">1</a></li>
+                <li><a href="htmls/Temporada1.html">1</a></li>
                 <li><a href="#">2</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Especial</a></li>
@@ -51,8 +49,8 @@
     </nav>
     <div class="container-fluid">
       <div class="row"> <!-- Videos -->
-        <div class="col-sm-12 col-md-12 well" align="center">
-          <div id="myCarouselVideo" class="carousel slide CarouselWidth" data-ride="carousel">
+        <div class="col-sm-12 col-md-12 well">
+          <div id="myCarouselVideo" class="carousel slide CarouselWidth center-block" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#myCarouselVideo" data-slide-to="0" class="active"></li>
@@ -83,8 +81,8 @@
           </div>
         </div>
       <div class="row"> <!-- Imagenes -->
-        <div class="col-sm-12 col-md-12 well" align="center" id="Galeria">
-          <div id="myCarouselImg" class="carousel slide CarouselWidth" data-ride="carousel">
+        <div class="col-sm-12 col-md-12 well" id="Galeria">
+          <div id="myCarouselImg" class="carousel slide CarouselWidth center-block" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#myCarouselImg" data-slide-to="0" class="active"></li>
@@ -115,24 +113,8 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-7 col-md-7 well" align="center" id="Comentarios"> <!-- Comentarios -->
-          <div class="form-group">
-            <label for="comment">Comentarios:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-          </div>
-        </div>
-        <div class="col-sm-5 col-md-5 well" >
-          <h1>Evaluanos :)</h1>
-          <img src="images/EvaluanosImg.png" class="img-circle" alt="Ups!">
-          <div align = "center">
-            <button type="button" class="btn">Me gusta</button>
-            <button type="button" class="btn">Que feo eso</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-12 well" align = "center" id="ListadoPersj"> <!-- Listado -->
+      <div class="row"> <!-- Listado -->
+        <div class="col-sm-12 col-md-12 well" id="ListadoPersj">
           <ul>
             <li><a href="#">Dandy</a></li>
             <li><a href="#">Scarlet</a></li>
@@ -142,7 +124,7 @@
         </div>
       </div>
       <div class="row"> <!-- Personajes -->
-        <div class="col-sm-4 col-md-4 well" align = "center">
+        <div class="col-sm-4 col-md-4 well center-block">
           <h1>Dandy</h1>
           <img src="images/ProfileDandy.jpg" class="img-rounded" alt="Ups!">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
@@ -159,8 +141,8 @@
         </div>
       </div>
       <div class="row"> <!-- Footer -->
-        <div class="col-sm-12 col-md-12 well" align = "center">
-          <p>©Tonami.</p>
+        <div class="col-sm-12 col-md-12 well" id="footer">
+          <p class="CenterText">©Tonami.</p>
         </div>
       </div>
     </div>
