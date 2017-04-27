@@ -11,16 +11,30 @@ ul{
     width: 50%;
 }
 
-.Video{
-  width: 80%;
-}
-
 .CenterText{
   text-align: center;
 }
 
+.Video{
+  width: 80%;
+}
+
+.listImg li{
+  display: inline;
+  margin: 15px;
+}
+
+.ImgEvaluar{
+  width: 200px;
+  height: 200px;
+}
+
 .CarouselWidth {
   width: 80%;
+}
+
+.FlotarDown{
+  float: bottom;
 }
 
 .TableEpisodios tr th{
