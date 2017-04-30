@@ -4,8 +4,15 @@ h1 {
   text-align: center;
 }
 
-ul{
+.PanelColor ul{
   list-style-type: none;
+  text-align:center;
+  padding: inherit;
+  margin: inherit;
+}
+
+.PanelColor ul li{
+    display: inline-block;
 }
 
 .SinMargen{
@@ -28,19 +35,19 @@ ul{
 
 .PanelColor{
   background-color:hsl(210, 100%, 65%);
-}
-
-.PanelControl{
-  width: 90%;
-  margin: auto;
+  border: groove;
+  border-color: lightblue;
+  margin: 5px;
 }
 
 .PanelGaleria{
   background-color:hsl(210, 100%, 80%);
   border-style: double;
   border-color: orange;
-  margin: 25px;
+  padding: inherit;
   color: hsl(24, 100%, 45%);
+  width: 450px;
+  height: 580px;
 }
 
 .PanelGaleria h1{
@@ -67,7 +74,7 @@ ul{
 
 .listImg li{
   display: inline;
-  margin: 25px;
+  margin: 15px;
 }
 
 .ImgEvaluar{
@@ -98,8 +105,8 @@ ul{
 #footer{
   color: white;
   background-color: hsl(216, 100%, 40%);
-  width: 100%;
   margin:inherit;
+  height: 45px;
 }
 
 /*-- --------------------------------------Caja de comentarios*/
