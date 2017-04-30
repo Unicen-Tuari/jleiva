@@ -17,8 +17,8 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
+    <nav class="navbar navbar-default SinMargen">
+      <div class="container-fluid FondoBarra" >
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -48,9 +48,9 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      <div class="row"> <!-- Videos -->
-        <div class="col-sm-12 col-md-12 well">
-          <div id="myCarouselVideo" class="carousel slide CarouselWidth center-block" data-ride="carousel">
+      <div class="row Fondo"> <!-- Videos -->
+        <div class="col-sm-12 col-md-12">
+          <div id="myCarouselVideo" class="carousel slide CarouselWidth center-block panel" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#myCarouselVideo" data-slide-to="0" class="active"></li>
@@ -81,8 +81,8 @@
           </div>
         </div>
       <div class="row"> <!-- Imagenes -->
-        <div class="col-sm-12 col-md-12 well" id="Galeria">
-          <div id="myCarouselImg" class="carousel slide CarouselWidth center-block" data-ride="carousel">
+        <div class="col-sm-12 col-md-12" id="Galeria">
+          <div id="myCarouselImg" class="carousel slide CarouselWidth center-block panel" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#myCarouselImg" data-slide-to="0" class="active"></li>
@@ -114,18 +114,20 @@
         </div>
       </div>
       <div class="row"> <!-- Listado -->
-        <div class="col-sm-12 col-md-12 well" id="ListadoPersj">
-          <ul class= "listImg">
-            <li><a href="#Galeria1"><img  src="images/profile/ProfileDandy.jpg" class="img-circle ImgEvaluar" alt="Dandy"></a></li>
-            <li><a href="#Galeria2"><img src="images/profile/ProfileScarlet.jpg" class="img-circle ImgEvaluar" alt="Scarlet"></a></li>
-            <li><a href="#Galeria3"><img src="images/profile/ProfileMeow.jpg" class="img-circle ImgEvaluar" alt="Meow"></a></li>
-            <li><a href="#Galeria4"><img src="images/profile/ProfileQT.jpg" class="img-circle ImgEvaluar" alt="QT"></a></li>
-            <li><a href="#Galeria5"><img src="images/profile/ProfileAdelie.jpg" class="img-circle ImgEvaluar" alt="Adelie"></a></li>
-          </ul>
+        <div class="col-sm-12 col-md-12" id="ListadoPersj">
+          <div class="PanelColor PanelControl">
+            <ul class= "listImg ">
+              <li><a href="#Galeria1"><img  src="images/profile/ProfileDandy.jpg" class="img-circle ImgEvaluar" alt="Dandy"></a></li>
+              <li><a href="#Galeria2"><img src="images/profile/ProfileScarlet.jpg" class="img-circle ImgEvaluar" alt="Scarlet"></a></li>
+              <li><a href="#Galeria3"><img src="images/profile/ProfileMeow.jpg" class="img-circle ImgEvaluar" alt="Meow"></a></li>
+              <li><a href="#Galeria4"><img src="images/profile/ProfileQT.jpg" class="img-circle ImgEvaluar" alt="QT"></a></li>
+              <li><a href="#Galeria5"><img src="images/profile/ProfileAdelie.jpg" class="img-circle ImgEvaluar" alt="Adelie"></a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="row"> <!-- Personajes -->
-        <div class="col-sm-4 col-md-4 well center-block" id="Galeria1">
+      <div class="row PanelColor PanelControl"> <!-- Personajes -->
+        <div class="col-sm-4 col-md-4 PanelGaleria" id="Galeria1">
           <h1>Dandy</h1>
           <img src="images/profile/ProfileDandy.jpg" class="img-rounded center-block" alt="Dandy">
           <p>Dandy is a tall man with a somewhat lanky yet athletic build (in the episode We're All Fools, So Let's All Dance,
@@ -133,7 +135,7 @@
               brown eyes, black eyebrows, a slender nose, an angular face, and an X-shaped mark on his chin.
              His hair is styled into a Regent pompadour, which is his most striking feature as well as his pride and joy.</p>
         </div>
-        <div class="col-sm-4 col-md-4 well" id="Galeria2">
+        <div class="col-sm-4 col-md-4 PanelGaleria" id="Galeria2">
           <h1>Scarlet</h1>
           <img src="images/profile/ProfileScarlet.jpg" class="img-rounded center-block" alt="Scarlet">
           <p>Scarlet is a slender woman, with a head of dark red hair, which is tied up.
@@ -141,7 +143,7 @@
             She also wears stockings that go all the way up her thigh. She has black high heels,
              and yellow rimmed glasses with blue earrings.</p>
         </div>
-        <div class="col-sm-4 col-md-4 well" id="Galeria3">
+        <div class="col-sm-4 col-md-4 PanelGaleria" id="Galeria3">
           <h1>Meow</h1>
           <img src="images/profile/ProfileMeow.jpg" class="img-rounded center-block" alt="Meow">
           <p>Meow (like others of his race) resembles a cat, with large yellow eyes and a tan fur covered body.
@@ -149,15 +151,15 @@
               star running from his scalp down to his back. He sports a red cap,
             a light green garment he says is a sarong, a brown satchel he uses to carry his phone, and a pair of orange nursing Crocs.</p>
         </div>
-        <div class="col-sm-4 col-md-4 well" id="Galeria4">
+        <div class="col-sm-4 col-md-4 PanelGaleria" id="Galeria4">
           <h1>QT</h1>
           <img src="images/profile/ProfileQT.jpg" class="img-rounded center-block" alt="QT">
           <p>QT is a robot on the Aloha Oe. Dandy was looking for a capable robot in the shop but ended up with QT.
             He states he is a high-powered machine though this is obviously a lie as he is very outdated.
-            One example of this is that he has to recharge 
+            One example of this is that he has to recharge
             when using too much energy and has to look at the alien dictionary for information on new species.</p>
         </div>
-        <div class="col-sm-4 col-md-4 well" id="Galeria5">
+        <div class="col-sm-4 col-md-4 PanelGaleria" id="Galeria5">
           <h1>Adelie</h1>
           <img src="images/profile/ProfileAdelie.jpg" class="img-rounded center-block" alt="Adelie">
           <p>Planet Humbolt. Originally hunting her kind for a whopping 8 million woolong reward, Dandy takes a shine to her
@@ -171,9 +173,10 @@
         </div>
       </div>
       <div class="row"> <!-- Footer -->
-        <div class="col-sm-12 col-md-12 well" id="footer">
+        <div class="col-sm-12 col-md-12" id="footer">
           <p class="CenterText">©Tonami.</p>
         </div>
+      </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

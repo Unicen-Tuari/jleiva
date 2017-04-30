@@ -1,0 +1,20 @@
+*{
+  color: #0b6001;
+}
+
+* button{
+  color: black;
+}
+.GameBox {
+  border: double;
+  width: 200px;
+}
+
+.CenterText{
+  text-align: center;
+}
+
+.center{
+    margin: auto;
+    width: 50%;
+}
