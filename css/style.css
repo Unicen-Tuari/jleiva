@@ -37,16 +37,14 @@ h1 {
   background-color:hsl(210, 100%, 65%);
   border: groove;
   border-color: lightblue;
-  margin: 5px;
 }
 
 .PanelGaleria{
   background-color:hsl(210, 100%, 80%);
   border-style: double;
   border-color: orange;
-  padding: inherit;
   color: hsl(24, 100%, 45%);
-  width: 450px;
+  width: 400px;
   height: 580px;
 }
 
