@@ -8,7 +8,7 @@
     <title>Space Dandy</title>
     <!-- Bootstrap --><!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../Index.html">Space Dandy</a>
+          <a class="navbar-brand" href="Index.html">Space Dandy</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,7 +41,6 @@
                 <li><a href="Especial.html">Especial</a></li>
               </ul>
             </li>
-            <li><a href="#Episodios">Episodios</a></li>
             <li><a href="#Comentarios">Comentarios</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -49,40 +48,12 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-12 col-md-12 Fondo " id="Episodios"> <!-- Episodios -->
-          <h1>Episodios</h1>
-          <table class="TableEpisodios center">
-            <tr>
-              <th>Episodios</th>
-              <th>Duracion</th>
-            </tr>
-            <tr>
-              <td><a href="Episodio1-1.html">1-Live with the Flow, Baby</a></td>
-              <td>24:12</td>
-            </tr>
-            <tr>
-              <td>2-The Search for the Phantom Space Ramen, Baby</td>
-              <td>24:12</td>
-            </tr>
-            <tr>
-              <td>3-Occasionally Even the Deceiver Is Deceived, Baby</td>
-              <td>24:12</td>
-            </tr>
-            <tr>
-              <td>4-Sometimes You Can't Live with Dying, Baby</td>
-              <td>24:12</td>
-            </tr>
-            <tr>
-              <td>5-A Merry Companion Is a Wagon in Space, Baby</td>
-              <td>24:12</td>
-            </tr>
-            <tr>
-              <td>6-The War of the Undies and Vests, Baby</td>
-              <td>24:12</td>
-            </tr>
-          </table>
+        <div class="col-sm-12 col-md-12 Fondo"><!-- Videos -->
+          <div class="item active embed-responsive embed-responsive-4by3 Video center-block">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/w4iVKzqATLw"></iframe>
+          </div>
         </div>
-        <div class="row center-block Fondo"> <!--C y E -->
+        <div class="row Fondo"> <!--C y E -->
           <div class="col-sm-6 col-md-6 PanelColor" id="Comentarios"> <!-- Comentarios -->
             <h1>Comentarios</h1>
             <div class="form-group">
@@ -95,8 +66,8 @@
           </div>
           <div class="col-sm-5 col-md-5 PanelColor"> <!-- Evaluar -->
             <h1>Te gusto?</h1>
-            <img src="../css/images/Dude.png" class="img-circle center-block ImgEvaluar" alt="Ups!">
-            <div>
+            <img src="css/images/Dude.png" class="img-circle center-block ImgEvaluar" alt="Ups!">
+            <div class="center">
               <button type="button" class="btn">Me gusta</button>
               <button type="button" class="btn pull-right">Que feo eso</button>
             </div>
@@ -107,7 +78,7 @@
                 <div class="center-block panel-white panel-shadow post well">
                     <div class="post-heading">
                         <div class="pull-left image">
-                            <img src="../images/profile/ProfileDandy.jpg" class="img-circle avatar" alt="UserProfileImage">
+                            <img src="images/profile/ProfileDandy.jpg" class="img-circle avatar" alt="UserProfileImage">
                         </div>
                         <div class="pull-left meta">
                             <div>
@@ -136,7 +107,7 @@
             </div>
         </div>
         <div class="row"> <!-- Footer -->
-          <div class="col-sm-12 col-md-12 F" id="footer">
+          <div class="col-sm-12 col-md-12 well" id="footer">
             <p class="CenterText">©Tonami.</p>
           </div>
         </div>
