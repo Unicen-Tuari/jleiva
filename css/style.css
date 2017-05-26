@@ -4,6 +4,10 @@ h1 {
   text-align: center;
 }
 
+#p{
+    color: green;
+}
+
 .PanelColor ul{
   list-style-type: none;
   text-align:center;
