@@ -8,17 +8,6 @@ h1 {
     color: green;
 }
 
-.PanelColor ul{
-  list-style-type: none;
-  text-align:center;
-  padding: inherit;
-  margin: inherit;
-}
-
-.PanelColor ul li{
-    display: inline-block;
-}
-
 .SinMargen{
   margin: inherit;
 }
