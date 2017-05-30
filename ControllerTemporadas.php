@@ -1,6 +1,7 @@
 <?php
 require_once('ViewTemporadas.php');
 require_once('ModelTemporadas.php');
+require_once('ControllerComentarios.php');
 
 class ControllerTemporadas
 {
@@ -17,7 +18,7 @@ class ControllerTemporadas
     $this->vista->Top();
   }
 
-  function ArmarListaPersonajes($temporada){
+  function ArmarListaEpisodios($temporada){
     $Arr_List_Episodios = $this->modelo->GetListaEpisodios($temporada);
     $this->vista->MostrarListaEpisodios($Arr_List_Episodios);
   }
@@ -28,7 +29,9 @@ class ControllerTemporadas
 }
 
 $p = new ControllerTemporadas;
+$c = new ControllerComentarios;
 $p->mostrarTop();
-$p->ArmarListaPersonajes(1);
+$p->ArmarListaEpisodios(1);
+$c->ArmarComentariosxTemp(1);
 $p->mostrarBot();
 ?>

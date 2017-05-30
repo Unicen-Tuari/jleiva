@@ -1,19 +1,20 @@
 <?php
-class ModelTareas
+class ModelEpisodios
 {
   private $db;
   function __construct()
   {
     $this->db = new PDO('mysql:host=localhost;'
-            .'dbname=dbSpaceDandy;charset=utf8',
+            .'dbname=db_SpaceDandy;charset=utf8',
             'root', '');
   }
 
-  function GetEpisodios($temporada)
+  function GetEpisodios($temporada, $episodio)
   {
-    $consulta = $this->db->prepare("SELECT * FROM '$temporada'");
+    $consulta = $this->db->prepare("SELECT * FROM listaepisodios");
     $result = $consulta->execute();
     return $consulta->fetchAll();
   }
 }
+
 ?>
