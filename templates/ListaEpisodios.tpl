@@ -7,7 +7,7 @@
       </tr>
       {foreach from=$List_Epis item=$Episodio}
         <tr>
-          <td><a href="Episodio{$Episodio['nro_episodio']}">{$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
+          <td><a href="ControllerEpisodios.php">{$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
           <td>{$Episodio['duracion']}</td>
         </tr>
       {/foreach}
