@@ -10,15 +10,18 @@ class ViewTemporadas
     $this->smarty = new Smarty;
   }
 
-  function mostrar(){
+  function Top(){
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
+  }
+
+  function MostrarListaEpisodios($Arr_List_Episodios){
+    $this->smarty->assign("List_Epis", $Arr_List_Episodios);
     $this->smarty->display('ListaEpisodios.tpl');
-    $this->smarty->display('comentarios.tpl');
+  }
+
+  function Bot(){
     $this->smarty->display('footer.tpl');
   }
 }
-
-$p = new ViewTemporadas;
-$p-> mostrar();
 ?>

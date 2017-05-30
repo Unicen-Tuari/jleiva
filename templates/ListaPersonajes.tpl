@@ -9,7 +9,6 @@
     </div>
   </div>
 </div>
-{debug}
 <div class="row PanelColor"> <!-- Personajes -->
   <div class="col-xm-12 col-md-12">
     {foreach from=$List_Pers item=$Pers}
