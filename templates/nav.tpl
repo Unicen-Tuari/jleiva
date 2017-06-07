@@ -1,7 +1,8 @@
+{include file="header.tpl" title=foo}
 <nav class="navbar navbar-default SinMargen">
   <div class="container-fluid FondoBarra">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="ControllerHome.php">Space Dandy</a>
+    <div class="navbar-header" action="../Route.php" method="get">
+      <a class="navbar-brand" href="Route.php?action=SpaceDandy">Space Dandy</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
