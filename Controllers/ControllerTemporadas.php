@@ -1,6 +1,6 @@
 <?php
-require_once('ViewTemporadas.php');
-require_once('ModelTemporadas.php');
+require_once('Views/ViewTemporadas.php');
+require_once('Models/ModelTemporadas.php');
 require_once('ControllerComentarios.php');
 
 class ControllerTemporadas
@@ -14,24 +14,14 @@ class ControllerTemporadas
       $this->modelo = new ModelTemporadas();
   }
 
-  function mostrarTop(){
-    $this->vista->Top();
-  }
-
   function ArmarListaEpisodios($temporada){
     $Arr_List_Episodios = $this->modelo->GetListaEpisodios($temporada);
-    $this->vista->MostrarListaEpisodios($Arr_List_Episodios);
+    return $Arr_List_Episodios;
   }
 
-  function mostrarBot(){
-    $this->vista->Bot();
+  function mostrarTemporada(){
+    $Arr_List_Episodios = $this->ArmarListaEpisodios(1);
+    $this->vista->mostrarTemporada($Arr_List_Episodios);
   }
 }
-
-$p = new ControllerTemporadas;
-$c = new ControllerComentarios;
-$p->mostrarTop();
-$p->ArmarListaEpisodios(1);
-$c->ArmarComentariosxTemp(1);
-$p->mostrarBot();
 ?>

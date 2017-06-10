@@ -8,9 +8,12 @@ class ViewHome
   function __construct()
   {
     $this->smarty = new Smarty;
+    $this->baseDir = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/';
   }
 
   function mostrarHome($Arr_List_Pers, $Arr_Galeria, $Cant_Img){
+    $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('video.tpl');
     $this->smarty->assign("Arr_Galeria", $Arr_Galeria);

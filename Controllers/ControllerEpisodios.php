@@ -1,6 +1,6 @@
 <?php
-require_once('ViewEpisodios.php');
-require_once('ModelEpisodios.php');
+require_once('Views/ViewEpisodios.php');
+require_once('Models/ModelEpisodios.php');
 require_once('ControllerComentarios.php');
 
 class ControllerEpisodios
@@ -14,16 +14,8 @@ class ControllerEpisodios
       $this->modelo = new ModelEpisodios();
   }
 
-  function mostrarTop(){
-    $this->vista->Top();
-  }
-
-  function mostrarBot(){
-    $this->vista->Bot();
+  function mostrarEpisodio(){
+    $this->vista->mostrarEpisodio();
   }
 }
-
-$p = new ControllerEpisodios;
-$p->mostrarTop();
-$p->mostrarBot();
 ?>

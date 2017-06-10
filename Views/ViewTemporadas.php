@@ -8,19 +8,17 @@ class ViewTemporadas
   function __construct()
   {
     $this->smarty = new Smarty;
+    $this->baseDir = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/';
   }
 
-  function Top(){
+  function mostrarTemporada($Arr_List_Episodios){
+    $this->smarty->assign("baseDir", $this->baseDir);
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
-  }
 
-  function MostrarListaEpisodios($Arr_List_Episodios){
     $this->smarty->assign("List_Epis", $Arr_List_Episodios);
     $this->smarty->display('ListaEpisodios.tpl');
-  }
 
-  function Bot(){
     $this->smarty->display('footer.tpl');
   }
 }

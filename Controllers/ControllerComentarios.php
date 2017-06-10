@@ -1,6 +1,6 @@
 <?php
-require_once('ViewComentarios.php');
-require_once('ModelComentarios.php');
+require_once('Views/ViewComentarios.php');
+require_once('Models/ModelComentarios.php');
 
 class ControllerComentarios
 {
