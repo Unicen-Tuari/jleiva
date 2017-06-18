@@ -15,7 +15,6 @@
             <li><a href="spaceDandy/temporada/1">Especial</a></li>
           </ul>
         </li>
-        <li><a href= #Comentarios>Comentarios</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -15,6 +15,7 @@ class ControllerLogin
   }
 
  function mostrarLogin(){
+
    $this->vista->mostrarLogin();
  }
 
@@ -27,30 +28,23 @@ class ControllerLogin
     if(isset($_POST["password"]) && strlen(trim($_POST["password"])) > 0){
       $password = $_POST["password"];
     }
-
-    //$cifrada = password_hash($password, PASSWORD_BCRYPT);
-    //var_dump($cifrada);
-    //echo '<br>';
     $usuario = $this->modelo->GetUsuario($email);
-    //echo $usuario["password"];
-    //echo '<br>';
-    //echo $password;
-    //echo '<br>';
-    //var_dump($usuario);
     $cifrada = password_hash($usuario["password"], PASSWORD_BCRYPT);
-    //echo '<br>';
-    //var_dump($cifrada);
+    echo $password;
     if (password_verify($password, $cifrada)){
       session_start();
-      $_SESSION["logueado"] = true;
-      $Admin = new ControllerAdmin;
-      $Admin->mostrarAdmin();
-      session_destroy();
+      $_SESSION['logueado'] = true;
+      header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado');
+      //session_destroy();
     }else{
       echo "MANDASTE FRUTA";
+      header('Location: http://127.0.0.1/web-1/jleiva/admin');
     }
   }
 
+  function verificaSession(){
+    return $_SESSION['logueado'];
+  }
 
 }
 ?>

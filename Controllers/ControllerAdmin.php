@@ -13,7 +13,16 @@ class ControllerAdmin
       $this->modelo = new ModelAdmin();
   }
 
+  function verificaSession(){
+    session_start();
+    if(!isset($_SESSION['logueado'])){
+      header('Location: http://127.0.0.1/web-1/jleiva/admin');
+      die();
+    }
+  }
+
   function mostrarAdmin(){
+   $this->verificaSession();
    $listaUsuarios = $this->modelo->GetUsuarios();
    $this->vista->mostrarAdmin($listaUsuarios);
  }

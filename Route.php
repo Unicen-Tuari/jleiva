@@ -14,17 +14,17 @@ function parseUrl($url){
     if($arrData[1] == configApp::$TEMPORADA){
       $arrInfo[configApp::$TEMPORADA] = $arrData[1];
     }else{
-      $arrInfo[configApp::$LOGUEADO] = $arrData[1];
+      $arrInfo[configApp::$LOGIN] = $arrData[1];
     }
   }
   if (isset($arrData[2])){
-    $arrInfo[configApp::$NRO_TEMP] = $arrData[2];//-nroTemporada
+    $arrInfo[configApp::$NRO_TEMP] = $arrData[2];
   }
   if (isset($arrData[3])){
-    $arrInfo[configApp::$EPISODIO] = $arrData[3];//-episodio
+    $arrInfo[configApp::$EPISODIO] = $arrData[3];
   }
   if (isset($arrData[4])){
-    $arrInfo[configApp::$NRO_EPI] = $arrData[4];//-nroEpisodio
+    $arrInfo[configApp::$NRO_EPI] = $arrData[4];
   }
   return $arrInfo;
 }
@@ -45,7 +45,22 @@ function gestionUsuario($url){
 }
 
 function gestionAdmin($url){
+  if (!isset($url[configApp::$LOGIN])){
+    $controllerLogin = new ControllerLogin();
+    $controllerLogin->mostrarLogin();
+  }else
+  switch ($url[configApp::$LOGIN]){
 
+    case configApp::$LOGUEAME:
+      $controllerLogin = new ControllerLogin();
+      $controllerLogin->logueame();
+    break;
+
+    case configApp::$LOGUEADO:
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->mostrarAdmin();
+    break;
+  }
 }
 
 if(!isset($_REQUEST[configApp::$ACTION])) {

@@ -7,7 +7,8 @@
       </tr>
       {foreach from=$List_Epis item=$Episodio}
         <tr>
-          <td><a href="{$temporada}/{$Episodio['id_episodio']}">{$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
+          <td><a href="spaceDandy/temporada/{$temporada}/episodio/{$Episodio['id_episodio']}">
+            {$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
           <td>{$Episodio['duracion']}</td>
         </tr>
       {/foreach}

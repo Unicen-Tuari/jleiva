@@ -13,6 +13,8 @@ class ViewAdmin
 
   function mostrarAdmin($listaUsuarios){
     $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->display('header.tpl');
+    $this->smarty->display('nav.tpl');
     $this->smarty->assign("listaUsuarios", $listaUsuarios);
     $this->smarty->display('tableAdmin.tpl');
     $this->smarty->display('footer.tpl');

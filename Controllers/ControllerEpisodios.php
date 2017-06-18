@@ -14,7 +14,7 @@ class ControllerEpisodios
       $this->modelo = new ModelEpisodios();
   }
 
-  function mostrarEpisodio(){
+  function mostrarEpisodio($episodio){
     $this->vista->mostrarEpisodio();
   }
 }

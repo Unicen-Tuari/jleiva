@@ -16,7 +16,6 @@ class ViewEpisodios
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('video.tpl');
-    $this->smarty->display('footer.tpl');
   }
 }
 
