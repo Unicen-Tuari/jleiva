@@ -19,9 +19,12 @@ class ControllerComentarios
  }
 
  function ArmarComentariosxEpisodio($temporada, $episodio){
-   $Arr_List_Comentarios = $this->modelo->GetComentariosxTemp($temporada, $episodio);
+   $Arr_List_Comentarios = $this->modelo->GetComentariosxTemp
+                                        ($temporada, $episodio);
    $this->vista->MostrarComentarios($Arr_List_Comentarios);
  }
+
+
 }
 
 if(isset($_GET["nombre"]) && isset($_GET["comentario"])){
@@ -29,5 +32,6 @@ if(isset($_GET["nombre"]) && isset($_GET["comentario"])){
   $comentario = $_GET["comentario"];
   $modelo = new ModelComentarios();
   $modelo->Guardar_Comentario($nombre, $comentario);
+  header('Location: http://127.0.0.1/web-1/jleiva/spaceDandy/temporada/1');
 }
 ?>

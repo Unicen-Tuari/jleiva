@@ -1,13 +1,13 @@
-<div class="col-sm-12 col-md-12 Fondo " id="Episodios"> <!-- Episodios -->
-    <h1>Episodios</h1>
-    <table class="TableEpisodios center">
+<div class="panel panel-default col-md-8 col-md-offset-2 Fondo "> <!-- Episodios -->
+    <div class="panel-heading">Tabla de Episodios</div>
+    <table class="Table">
       <tr>
         <th>Episodios</th>
         <th>Duracion</th>
       </tr>
       {foreach from=$List_Epis item=$Episodio}
         <tr>
-          <td><a href="ControllerEpisodios.php">{$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
+          <td><a href="{$temporada}/{$Episodio['id_episodio']}">{$Episodio['nro_episodio']}-{$Episodio['nombre']}</a></td>
           <td>{$Episodio['duracion']}</td>
         </tr>
       {/foreach}

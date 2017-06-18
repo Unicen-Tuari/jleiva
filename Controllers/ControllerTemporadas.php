@@ -19,9 +19,10 @@ class ControllerTemporadas
     return $Arr_List_Episodios;
   }
 
-  function mostrarTemporada(){
-    $Arr_List_Episodios = $this->ArmarListaEpisodios(1);
-    $this->vista->mostrarTemporada($Arr_List_Episodios);
+  function mostrarTemporada($temporada){
+    $Arr_List_Episodios = $this->ArmarListaEpisodios($temporada);
+    $this->vista->mostrarTemporada($Arr_List_Episodios, $temporada);
   }
+
 }
 ?>

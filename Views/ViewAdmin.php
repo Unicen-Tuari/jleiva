@@ -1,7 +1,7 @@
 <?php
 require_once('libs/Smarty.class.php');
 
-class ViewComentarios
+class ViewAdmin
 {
   private $smarty;
 
@@ -11,10 +11,10 @@ class ViewComentarios
     $this->baseDir = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/';
   }
 
-  function MostrarComentarios($Arr_List_Comentarios){
+  function mostrarAdmin($listaUsuarios){
     $this->smarty->assign("baseDir", $this->baseDir);
-    $this->smarty->assign("List_Comentarios", $Arr_List_Comentarios);
-    $this->smarty->display('comentarios.tpl');
+    $this->smarty->assign("listaUsuarios", $listaUsuarios);
+    $this->smarty->display('tableAdmin.tpl');
     $this->smarty->display('footer.tpl');
   }
 }

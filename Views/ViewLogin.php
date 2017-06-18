@@ -1,7 +1,7 @@
 <?php
 require_once('libs/Smarty.class.php');
 
-class ViewTemporadas
+class ViewLogin
 {
   private $smarty;
 
@@ -11,15 +11,11 @@ class ViewTemporadas
     $this->baseDir = 'http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/';
   }
 
-  function mostrarTemporada($Arr_List_Episodios, $temporada){
+  function mostrarLogin(){
     $this->smarty->assign("baseDir", $this->baseDir);
-    $this->smarty->assign("temporada", $temporada);
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
-
-    $this->smarty->assign("List_Epis", $Arr_List_Episodios);
-    $this->smarty->display('ListaEpisodios.tpl');
-
+    $this->smarty->display('login.tpl');
   }
 }
 ?>
