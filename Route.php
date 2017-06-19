@@ -18,13 +18,25 @@ function parseUrl($url){
     }
   }
   if (isset($arrData[2])){
-    $arrInfo[configApp::$NRO_TEMP] = $arrData[2];
+    if(is_numeric($arrData[2])){
+      $arrInfo[configApp::$NRO_TEMP] = $arrData[2];
+    }else{
+      $arrInfo[configApp::$SESSIONES_ADMIN] = $arrData[2];
+    }
   }
   if (isset($arrData[3])){
-    $arrInfo[configApp::$EPISODIO] = $arrData[3];
+    if($arrData[3] == configApp::$EPISODIO){
+      $arrInfo[configApp::$EPISODIO] = $arrData[3];
+    }else{
+      $arrInfo[configApp::$TASK] = $arrData[3];
+    }
   }
   if (isset($arrData[4])){
-    $arrInfo[configApp::$NRO_EPI] = $arrData[4];
+    if(is_numeric($arrData[4])){
+      $arrInfo[configApp::$NRO_EPI] = $arrData[4];
+    }else{
+      $arrInfo[configApp::$TASK_VERIF] = $arrData[4];
+    }
   }
   return $arrInfo;
 }
@@ -44,6 +56,75 @@ function gestionUsuario($url){
   }
 }
 
+function verificarTarea($url){
+  switch ($url[configApp::$TASK_VERIF]) {
+    case configApp::$NEW_USER_C:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->cargarUsuario();
+    break;
+
+    case configApp::$EDIT_USER_E:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->subirEditado();
+    break;
+
+  }
+}
+
+function tareasUsuario($url){
+  switch ($url[configApp::$TASK]) {
+    case configApp::$NEW_USER:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->crearUsuario();
+      }else{
+        verificarTarea($url);
+      }
+    break;
+
+    case configApp::$EDIT_USER:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->editarUsuario();
+      }else{
+        verificarTarea($url);
+      }
+    break;
+
+    case configApp::$DELETE_USER:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->eliminarUsuario();
+    break;
+  }
+}
+
+function sectorAdmin($url){
+  switch ($url[configApp::$SESSIONES_ADMIN]){
+    case configApp::$ADMIN_U:
+      if(!isset($url[configApp::$TASK])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->sessionUsuarios();
+      }else{
+        tareasUsuario($url);
+      }
+    break;
+
+    case configApp::$ADMIN_T:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->sessionTemporadas();
+    break;
+
+    case configApp::$ADMIN_E:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->sessionEpisodios();
+    break;
+    case configApp::$LOGOUT:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->terminarSession();
+    break;
+  }
+}
+
 function gestionAdmin($url){
   if (!isset($url[configApp::$LOGIN])){
     $controllerLogin = new ControllerLogin();
@@ -57,8 +138,12 @@ function gestionAdmin($url){
     break;
 
     case configApp::$LOGUEADO:
-        $controllerAdmin = new ControllerAdmin();
-        $controllerAdmin->mostrarAdmin();
+        if(!isset($url[configApp::$SESSIONES_ADMIN])){
+          $controllerAdmin = new ControllerAdmin();
+          $controllerAdmin->mostrarAdmin();
+        }else{
+          sectorAdmin($url);
+        }
     break;
   }
 }

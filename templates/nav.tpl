@@ -16,6 +16,15 @@
           </ul>
         </li>
       </ul>
+      {if $session == user}
+      <ul class="nav navbar-nav navbar-right">
+        <li class= 'dropdown-menu-right'><a href="admin">Admin</a></li>
+      </ul>
+      {else}
+      <ul class="nav navbar-nav navbar-right">
+        <li class= 'dropdown-menu-right'><a href="admin/logueado/logout">Logout</a></li>
+      </ul>
+      {/if}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
   <div class="container-fluid"><!-- container-fluid -->

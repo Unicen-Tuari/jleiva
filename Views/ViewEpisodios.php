@@ -13,6 +13,7 @@ class ViewEpisodios
 
   function mostrarEpisodio(){
     $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'user');
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('video.tpl');

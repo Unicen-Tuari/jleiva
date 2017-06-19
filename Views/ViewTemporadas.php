@@ -13,6 +13,7 @@ class ViewTemporadas
 
   function mostrarTemporada($Arr_List_Episodios, $temporada){
     $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'user');
     $this->smarty->assign("temporada", $temporada);
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');

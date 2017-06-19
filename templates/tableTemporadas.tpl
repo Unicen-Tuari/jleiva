@@ -1,19 +1,19 @@
 <div class="panel panel-default col-md-8 col-md-offset-2">
   <!-- Default panel contents -->
-  <div class="panel-heading">Tabla de Usuarios</div>
+  <div class="panel-heading">Tabla de Temporadas</div>
 
   <!-- Table -->
   <table class="table">
     <tr>
       <th>#</th>
-      <th>e-mail</th>
-      <th>password</th>
+      <th>cantCaps</th>
+      <th>detalles</th>
     </tr>
-    {foreach from=$listaUsuarios item=$usuario}
+    {foreach from=$listaTemporadas item=$temporada}
       <tr>
-        <td>{$usuario['id_usuario']}</td>
-        <td>{$usuario['email']}</td>
-        <td>{$usuario['password']}</td>
+        <td>{$temporada['id_temp']}</td>
+        <td>{$temporada['cant_caps']}</td>
+        <td>{$temporada['detalles']}</td>
         <td><a href="http://localhost/web-1/jleiva/admin/logueado/{$usuario['id_usuario']}">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
       </tr>

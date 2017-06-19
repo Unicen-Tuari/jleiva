@@ -13,6 +13,7 @@ class ViewHome
 
   function mostrarHome($Arr_List_Pers, $Arr_Galeria, $Cant_Img){
     $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'user');
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('video.tpl');
