@@ -17,11 +17,20 @@ class ConfigApp{
         public static $TASK = 'tarea';
         public static $TASK_VERIF = 'verificarTarea';
 
+        public static $DONE = 'creado';
+        public static $EDIT = 'editado';
+
         public static $NEW_USER = 'nuevoUsuario';
-        public static $NEW_USER_C = 'creado';
         public static $EDIT_USER = 'editarUsuario';
-        public static $EDIT_USER_E = 'editado';
         public static $DELETE_USER = 'eliminarUsuario';
+
+        public static $NEW_TEMP = 'nuevaTemp';
+        public static $EDIT_TEMP = 'editarTemp';
+        public static $DELETE_TEMP = 'eliminarTemp';
+
+        public static $NEW_EPI = 'nuevoEpi';
+        public static $EDIT_EPI = 'editarEpi';
+        public static $DELETE_EPI = 'eliminarEpi';
 
         public static $HOME = '';
         public static $TEMPORADA = 'temporada';

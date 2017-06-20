@@ -1,8 +1,9 @@
 <div class="panel panel-default col-md-8 col-md-offset-2">
   <!-- Default panel contents -->
-  <div class="panel-heading">Tabla de Episodios</div>
-
-  <!-- Table -->
+  <div class="panel-heading">Tabla de Episodios
+    <a href="admin/logueado/sEpisodios/nuevoEpi">
+    <span class="glyphicon glyphicon-send"></span></a>
+  </div>
   <table class="table">
     <tr>
       <th>#</th>
@@ -20,9 +21,25 @@
         <td>{$episodio['duracion']}</td>
         <td>{$episodio['detalles']}</td>
         <td>{$episodio['nro_episodio']}</td>
-        <td><a href="http://localhost/web-1/jleiva/admin/logueado/{$usuario['id_usuario']}">
-            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
-      </tr>
+        <td>
+          <form action="admin/logueado/sEpisodios/eliminarEpi" method="post">
+              <input type="hidden" name='id_episodio' value="{$episodio['id_episodio']}">
+              <button href="admin/logueado/sEpisodios/eliminarEpi" type="submit"
+               class="glyphicon glyphicon-trash"></button>
+          </form>
+        </td>
+        <td>
+          <form action="admin/logueado/sEpisodios/editarEpi" method="post">
+              <input type="hidden" name='id_episodio' value="{$episodio['id_episodio']}">
+              <input type="hidden" name='id_temporada' value="{$episodio['id_temporada']}">
+              <input type="hidden" name='nombre' value="{$episodio['nombre']}">
+              <input type="hidden" name='duracion' value="{$episodio['duracion']}">
+              <input type="hidden" name='detalles' value="{$episodio['detalles']}">
+              <input type="hidden" name='nro_episodio' value="{$episodio['nro_episodio']}">
+              <button href="admin/logueado/sEpisodios/editarEpi" type="submit"
+               class="glyphicon glyphicon-wrench"></button>
+          </form>
+        </td>
     {/foreach}
   </table>
 </div>

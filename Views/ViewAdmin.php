@@ -17,7 +17,6 @@ class ViewAdmin
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('sectoresAdmin.tpl');
-    $this->smarty->display('footer.tpl');
   }
 
   function sessionUsuarios($listaUsuarios){
@@ -27,7 +26,6 @@ class ViewAdmin
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('tableUsuarios.tpl');
-    $this->smarty->display('footer.tpl');
   }
 
   function sessionTemporadas($listaTemporadas){
@@ -37,7 +35,6 @@ class ViewAdmin
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('tableTemporadas.tpl');
-    $this->smarty->display('footer.tpl');
   }
 
   function sessionEpisodios($listaEpisodios){
@@ -47,7 +44,6 @@ class ViewAdmin
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
     $this->smarty->display('tableEpisodios.tpl');
-    $this->smarty->display('footer.tpl');
   }
 
   function crearUsuario(){
@@ -75,5 +71,68 @@ class ViewAdmin
     $this->smarty->display('nav.tpl');
     $this->smarty->display('newEditUser.tpl');
   }
+
+//----------------------------------------------------------------
+
+  function crearTemp(){
+    $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Crear Temporada');
+    $this->smarty->assign("dir", 'nuevaTemp/creado');
+    $this->smarty->assign("id_temp", '');
+    $this->smarty->assign("cant_caps", '');
+    $this->smarty->assign("detalles", '');
+    $this->smarty->display('header.tpl');
+    $this->smarty->display('nav.tpl');
+    $this->smarty->display('newEditTemp.tpl');
+  }
+
+  function editarTemp($id_temp, $cant_caps, $detalles){
+    $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Editar Usuario');
+    $this->smarty->assign("dir", 'editarTemp/editado');
+    $this->smarty->assign("id_temp", $id_temp);
+    $this->smarty->assign("cant_caps", $cant_caps);
+    $this->smarty->assign("detalles", $detalles);
+    $this->smarty->display('header.tpl');
+    $this->smarty->display('nav.tpl');
+    $this->smarty->display('newEditTemp.tpl');
+  }
+
+//-------------------------------------------------------------------
+
+  function crearEpi(){
+    $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Crear Episodio');
+    $this->smarty->assign("dir", 'nuevoEpi/creado');
+    $this->smarty->assign("id_episodio", '');
+    $this->smarty->assign("id_temporada", '');
+    $this->smarty->assign("nombre", '');
+    $this->smarty->assign("duracion", '');
+    $this->smarty->assign("detalles", '');
+    $this->smarty->assign("nro_episodio", '');
+    $this->smarty->display('header.tpl');
+    $this->smarty->display('nav.tpl');
+    $this->smarty->display('newEditEpi.tpl');
+  }
+
+  function editarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio){
+    $this->smarty->assign("baseDir", $this->baseDir);
+    $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Editar Episodios');
+    $this->smarty->assign("dir", 'editarEpi/editado');
+    $this->smarty->assign("id_episodio", $id_episodio);
+    $this->smarty->assign("id_temporada", $id_temporada);
+    $this->smarty->assign("nombre", $nombre);
+    $this->smarty->assign("duracion", $duracion);
+    $this->smarty->assign("detalles", $detalles);
+    $this->smarty->assign("nro_episodio", $nro_episodio);
+    $this->smarty->display('header.tpl');
+    $this->smarty->display('nav.tpl');
+    $this->smarty->display('newEditEpi.tpl');
+  }
+
 }
 ?>

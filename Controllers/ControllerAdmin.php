@@ -78,7 +78,7 @@ function mostrarAdmin(){
       $id_usuario = $_POST["id_usuario"];
       $this->modelo->eliminarUsuario($id_usuario);
     }
-    header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado');
+    header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
   }
 
 function editarUsuario(){
@@ -91,7 +91,7 @@ function editarUsuario(){
   }
 }
 
-function subirEditado(){
+function subirEditadoU(){
   $this->verificaSession();
   if(isset($_POST["id_safe"]) && isset($_POST["id_usuario"]) && isset($_POST["email"]) && isset($_POST["password"])){
     $id_safe = $_POST["id_safe"];
@@ -101,6 +101,120 @@ function subirEditado(){
     $this->modelo->editarUsuario($id_safe, $id_usuario, $password, $email);
   }
   header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
+}
+
+//-----------------------------------------------------------------------
+
+function crearTemp(){
+  $this->verificaSession();
+  $this->vista->crearTemp();
+}
+
+function cargarTemp(){
+  $this->verificaSession();
+  if(isset($_POST["id_temp"]) && isset($_POST["cant_caps"])
+                                 && isset($_POST["detalles"])){
+    $id_temp = $_POST["id_temp"];
+    $cant_caps = $_POST["cant_caps"];
+    $detalles = $_POST["detalles"];
+    $this->modelo->cargartemp($id_temp, $cant_caps, $detalles);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+}
+
+function eliminarTemp(){
+  $this->verificaSession();
+  if(isset($_POST["id_temp"])){
+    $id_temp = $_POST["id_temp"];
+    $this->modelo->eliminarTemp($id_temp);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+}
+
+function editarTemp(){
+  $this->verificaSession();
+  if(isset($_POST["id_temp"]) && isset($_POST["cant_caps"]) && isset($_POST["detalles"])){
+    $id_temp = $_POST["id_temp"];
+    $cant_caps = $_POST["cant_caps"];
+    $detalles = $_POST["detalles"];
+    $this->vista->editarTemp($id_temp, $cant_caps, $detalles);
+  }
+}
+
+function subirEditadoT(){
+  $this->verificaSession();
+  if(isset($_POST["id_safe"]) && isset($_POST["id_temp"]) && isset($_POST["cant_caps"]) && isset($_POST["detalles"])){
+    $id_safe = $_POST["id_safe"];
+    $id_temp = $_POST["id_temp"];
+    $cant_caps = $_POST["cant_caps"];
+    $detalles = $_POST["detalles"];
+    $this->modelo->editarTemp($id_safe, $id_temp, $cant_caps, $detalles);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+}
+
+//---------------------------------------------------------------------------
+
+function crearEpi(){
+  $this->verificaSession();
+  $this->vista->crearEpi();
+}
+
+function cargarEpi(){
+  $this->verificaSession();
+  if(isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
+     isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
+     isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
+    $id_episodio = $_POST["id_episodio"];
+    $id_temporada = $_POST["id_temporada"];
+    $nombre = $_POST["nombre"];
+    $duracion = $_POST["duracion"];
+    $detalles = $_POST["detalles"];
+    $nro_episodio = $_POST["nro_episodio"];
+    $this->modelo->cargarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
+}
+
+function eliminarEpi(){
+  $this->verificaSession();
+  if(isset($_POST["id_episodio"])){
+    $id_episodio = $_POST["id_episodio"];
+    $this->modelo->eliminarEpi($id_episodio);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
+}
+
+function editarEpi(){
+  $this->verificaSession();
+  if(isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
+     isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
+     isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
+    $id_episodio = $_POST["id_episodio"];
+    $id_temporada = $_POST["id_temporada"];
+    $nombre = $_POST["nombre"];
+    $duracion = $_POST["duracion"];
+    $detalles = $_POST["detalles"];
+    $nro_episodio = $_POST["nro_episodio"];
+    $this->vista->editarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+  }
+}
+
+function subirEditadoE(){
+  $this->verificaSession();
+  if(isset($_POST["id_safe"]) && isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
+     isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
+     isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
+    $id_safe = $_POST["id_safe"];
+    $id_episodio = $_POST["id_episodio"];
+    $id_temporada = $_POST["id_temporada"];
+    $nombre = $_POST["nombre"];
+    $duracion = $_POST["duracion"];
+    $detalles = $_POST["detalles"];
+    $nro_episodio = $_POST["nro_episodio"];
+    $this->modelo->editarEpi($id_safe, $id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
 }
 
 }

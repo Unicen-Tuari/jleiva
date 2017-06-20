@@ -35,7 +35,7 @@ function parseUrl($url){
     if(is_numeric($arrData[4])){
       $arrInfo[configApp::$NRO_EPI] = $arrData[4];
     }else{
-      $arrInfo[configApp::$TASK_VERIF] = $arrData[4];
+      $arrInfo[configApp::$TASK_VERIF] = $arrData[4];//creado-editado
     }
   }
   return $arrInfo;
@@ -56,18 +56,102 @@ function gestionUsuario($url){
   }
 }
 
-function verificarTarea($url){
+function cargarEpi($url){
   switch ($url[configApp::$TASK_VERIF]) {
-    case configApp::$NEW_USER_C:
+    case configApp::$DONE:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->cargarEpi();
+    break;
+
+    case configApp::$EDIT:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->subirEditadoE();
+    break;
+
+  }
+}
+
+function cargarTemp($url){
+  switch ($url[configApp::$TASK_VERIF]) {
+    case configApp::$DONE:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->cargarTemp();
+    break;
+
+    case configApp::$EDIT:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->subirEditadoT();
+    break;
+
+  }
+}
+
+function cargarUsuario($url){
+  switch ($url[configApp::$TASK_VERIF]) {
+    case configApp::$DONE:
       $controllerAdmin = new ControllerAdmin();
       $controllerAdmin->cargarUsuario();
     break;
 
-    case configApp::$EDIT_USER_E:
+    case configApp::$EDIT:
       $controllerAdmin = new ControllerAdmin();
-      $controllerAdmin->subirEditado();
+      $controllerAdmin->subirEditadoU();
     break;
 
+  }
+}
+
+function tareasEpi($url){
+  switch ($url[configApp::$TASK]){
+    case configApp::$NEW_EPI:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->crearEpi();
+      }else{
+        cargarEpi($url);
+      }
+    break;
+
+    case configApp::$EDIT_EPI:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->editarEpi();
+      }else{
+        cargarEpi($url);
+      }
+    break;
+
+    case configApp::$DELETE_EPI:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->eliminarEpi();
+    break;
+  }
+}
+
+function tareasTemp($url){//me aseguro que entre por temp
+  switch ($url[configApp::$TASK]) {
+    case configApp::$NEW_TEMP:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->crearTemp();
+      }else{
+        cargarTemp($url);
+      }
+    break;
+
+    case configApp::$EDIT_TEMP:
+      if(!isset($url[configApp::$TASK_VERIF])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->editarTemp();
+      }else{
+        cargarTemp($url);
+      }
+    break;
+
+    case configApp::$DELETE_TEMP:
+      $controllerAdmin = new ControllerAdmin();
+      $controllerAdmin->eliminarTemp();
+    break;
   }
 }
 
@@ -78,7 +162,7 @@ function tareasUsuario($url){
         $controllerAdmin = new ControllerAdmin();
         $controllerAdmin->crearUsuario();
       }else{
-        verificarTarea($url);
+        cargarUsuario($url);
       }
     break;
 
@@ -87,7 +171,7 @@ function tareasUsuario($url){
         $controllerAdmin = new ControllerAdmin();
         $controllerAdmin->editarUsuario();
       }else{
-        verificarTarea($url);
+        cargarUsuario($url);
       }
     break;
 
@@ -110,13 +194,21 @@ function sectorAdmin($url){
     break;
 
     case configApp::$ADMIN_T:
-      $controllerAdmin = new ControllerAdmin();
-      $controllerAdmin->sessionTemporadas();
+      if(!isset($url[configApp::$TASK])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->sessionTemporadas();
+      }else{
+        tareasTemp($url);
+      }
     break;
 
     case configApp::$ADMIN_E:
-      $controllerAdmin = new ControllerAdmin();
-      $controllerAdmin->sessionEpisodios();
+      if(!isset($url[configApp::$TASK])){
+        $controllerAdmin = new ControllerAdmin();
+        $controllerAdmin->sessionEpisodios();
+      }else{
+        tareasEpi($url);
+      }
     break;
     case configApp::$LOGOUT:
       $controllerAdmin = new ControllerAdmin();

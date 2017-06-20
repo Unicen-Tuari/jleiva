@@ -30,7 +30,7 @@ class ControllerLogin
     }
     $usuario = $this->modelo->GetUsuario($email);
     $hash = $usuario["password"];
-    if (password_verify($password, $hash)){
+    if (password_verify($password, $hash) == 0){
       session_start();
       $_SESSION['logueado'] = true;
       header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado');
