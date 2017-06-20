@@ -53,17 +53,27 @@ class ViewAdmin
   function crearUsuario(){
     $this->smarty->assign("baseDir", $this->baseDir);
     $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Crear Usuario');
+    $this->smarty->assign("dir", 'nuevoUsuario/creado');
+    $this->smarty->assign("id_usuario", '');
+    $this->smarty->assign("email", '');
+    $this->smarty->assign("password", '');
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
-    $this->smarty->display('newUser.tpl');
+    $this->smarty->display('newEditUser.tpl');
   }
 
-  function editarUsuario(){
+  function editarUsuario($id_usuario, $email, $password){
     $this->smarty->assign("baseDir", $this->baseDir);
     $this->smarty->assign("session", 'admin');
+    $this->smarty->assign("titulo", 'Editar Usuario');
+    $this->smarty->assign("dir", 'editarUsuario/editado');
+    $this->smarty->assign("id_usuario", $id_usuario);
+    $this->smarty->assign("email", $email);
+    $this->smarty->assign("password", $password);
     $this->smarty->display('header.tpl');
     $this->smarty->display('nav.tpl');
-    $this->smarty->display('newUser.tpl');
+    $this->smarty->display('newEditUser.tpl');
   }
 }
 ?>

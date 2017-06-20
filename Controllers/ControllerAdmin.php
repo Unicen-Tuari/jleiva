@@ -66,7 +66,8 @@ function mostrarAdmin(){
       $id_usuario = $_POST["id_usuario"];
       $email = $_POST["email"];
       $password = $_POST["password"];
-      $this->modelo->cargarUsuario($id_usuario, $email, $password);
+      $hash = password_hash($usuario["password"], PASSWORD_BCRYPT);
+      $this->modelo->cargarUsuario($id_usuario, $email, $hash);
     }
     header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
   }
@@ -82,7 +83,24 @@ function mostrarAdmin(){
 
 function editarUsuario(){
   $this->verificaSession();
-  $this->vista->editarUsuario();
+  if(isset($_POST["id_usuario"]) && isset($_POST["email"]) && isset($_POST["password"])){
+    $id_usuario = $_POST["id_usuario"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $this->vista->editarUsuario($id_usuario, $email, $password);
+  }
+}
+
+function subirEditado(){
+  $this->verificaSession();
+  if(isset($_POST["id_safe"]) && isset($_POST["id_usuario"]) && isset($_POST["email"]) && isset($_POST["password"])){
+    $id_safe = $_POST["id_safe"];
+    $id_usuario = $_POST["id_usuario"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $this->modelo->editarUsuario($id_safe, $id_usuario, $password, $email);
+  }
+  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
 }
 
 }

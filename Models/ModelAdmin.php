@@ -37,5 +37,10 @@ class ModelAdmin
     $sentencia = $this->db->prepare("DELETE FROM usuario WHERE id_usuario=?");
     $sentencia->execute(array($id_usuario));
   }
+
+  function editarUsuario($idsafe, $id_usuario, $password, $email){
+    $sentencia = $this->db->prepare("UPDATE usuario SET id_usuario='$id_usuario', password='$password', email='$email' WHERE id_usuario=?");
+    $sentencia->execute(array($idsafe));
+  }
 }
  ?>

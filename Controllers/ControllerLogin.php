@@ -29,14 +29,12 @@ class ControllerLogin
       $password = $_POST["password"];
     }
     $usuario = $this->modelo->GetUsuario($email);
-    $cifrada = password_hash($usuario["password"], PASSWORD_BCRYPT);
-    echo $password;
-    if (password_verify($password, $cifrada)){
+    $hash = $usuario["password"];
+    if (password_verify($password, $hash)){
       session_start();
       $_SESSION['logueado'] = true;
       header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado');
     }else{
-      echo "MANDASTE FRUTA";
       header('Location: http://127.0.0.1/web-1/jleiva/admin');
     }
   }
