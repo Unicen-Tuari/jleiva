@@ -1,6 +1,6 @@
     </div><!-- container-fluid -->
     <footer class="row">
-      <div class="col-xm-12 col-md-12 FondoBarra">
+      <div class="col-xm-12 col-md-12 well">
         <p class="CenterText">©Tonami.</p>
       </div>
     </footer>

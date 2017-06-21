@@ -2,6 +2,8 @@
 require_once('Views/ViewComentarios.php');
 require_once('Models/ModelComentarios.php');
 
+require_once('config/configUrl.php');
+
 class ControllerComentarios
 {
   private $vista;
@@ -32,6 +34,6 @@ if(isset($_GET["nombre"]) && isset($_GET["comentario"])){
   $comentario = $_GET["comentario"];
   $modelo = new ModelComentarios();
   $modelo->Guardar_Comentario($nombre, $comentario);
-  header('Location: http://127.0.0.1/web-1/jleiva/spaceDandy/temporada/1');
+  header("Location:".ConfigUrl::$BASE_URL."/jleiva/spaceDandy/temporada/1");
 }
 ?>

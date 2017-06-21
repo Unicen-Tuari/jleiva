@@ -135,32 +135,3 @@ h1 {
   display: inline-block;
   margin-right: 15px;
 }
-
-/*-- --------------------------------------Color Nav*/
-.navbar-default .navbar-brand {
-    color:White;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
-    color: black;
-}
-/* Link */
-.navbar-default .navbar-nav > li > a {
-    color: white;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: black;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-    color: white;
-    background-color: black;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: black;
-    background-color: hsl(216, 100%, 80%);
-}

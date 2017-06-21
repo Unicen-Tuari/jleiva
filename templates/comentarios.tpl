@@ -1,4 +1,4 @@
-<div class="row Fondo"> <!--C y E -->
+<div class="row"> <!--C y E -->
   <div class="col-xm-12 col-md-6 col-md-offset-1 PanelColor well" id="Comentarios"> <!-- Comentarios -->
     <form action="ControllerComentarios.php" method="get">
       <h1>Comentarios</h1>
@@ -21,8 +21,8 @@
   </div>
 </div>
 
-<div class="row Fondo"> <!--Caja de comentarios -->
-    <div class="col-xm-12 col-md-10 col-md-offset-1 Fondo">
+<div class="row"> <!--Caja de comentarios -->
+    <div class="col-xm-12 col-md-10 col-md-offset-1">
       {foreach from=$List_Comentarios item=$Comentario}
         <div class="center-block panel-white panel-shadow post well">
             <div class="post-heading">

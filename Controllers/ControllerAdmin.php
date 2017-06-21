@@ -2,6 +2,8 @@
 require_once('Views/ViewAdmin.php');
 require_once('Models/ModelAdmin.php');
 
+require_once('config/configUrl.php');
+
 class ControllerAdmin
 {
   private $vista;
@@ -16,7 +18,7 @@ class ControllerAdmin
   function verificaSession(){
     session_start();
     if(!isset($_SESSION['logueado'])){
-      header('Location: http://127.0.0.1/web-1/jleiva/admin');
+        header("Location:".ConfigUrl::$BASE_URL."/admin");
       die();
     }
   }
@@ -24,10 +26,10 @@ class ControllerAdmin
  function terminarSession(){
    session_start();
    if(isset($_SESSION['logueado'])){
-     header('Location: http://127.0.0.1/web-1/jleiva/admin');
+     header("Location:".ConfigUrl::$BASE_URL."/admin");
      session_destroy();
    }else{
-     header('Location: http://127.0.0.1/web-1/jleiva/admin');
+     header("Location:".ConfigUrl::$BASE_URL."/admin");
    }
  }
 
@@ -66,10 +68,10 @@ function mostrarAdmin(){
       $id_usuario = $_POST["id_usuario"];
       $email = $_POST["email"];
       $password = $_POST["password"];
-      $hash = password_hash($usuario["password"], PASSWORD_BCRYPT);
-      $this->modelo->cargarUsuario($id_usuario, $email, $hash);
+      //$hash = password_hash($usuario["password"], PASSWORD_BCRYPT);
+      $this->modelo->cargarUsuario($id_usuario, $email, $password);
     }
-    header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
+    header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sUsuarios");
   }
 
   function eliminarUsuario(){
@@ -78,7 +80,7 @@ function mostrarAdmin(){
       $id_usuario = $_POST["id_usuario"];
       $this->modelo->eliminarUsuario($id_usuario);
     }
-    header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
+    header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sUsuarios");
   }
 
 function editarUsuario(){
@@ -100,7 +102,7 @@ function subirEditadoU(){
     $email = $_POST["email"];
     $this->modelo->editarUsuario($id_safe, $id_usuario, $password, $email);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sUsuarios');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sUsuarios");
 }
 
 //-----------------------------------------------------------------------
@@ -119,7 +121,7 @@ function cargarTemp(){
     $detalles = $_POST["detalles"];
     $this->modelo->cargartemp($id_temp, $cant_caps, $detalles);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sTemporadas");
 }
 
 function eliminarTemp(){
@@ -128,7 +130,7 @@ function eliminarTemp(){
     $id_temp = $_POST["id_temp"];
     $this->modelo->eliminarTemp($id_temp);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sTemporadas");
 }
 
 function editarTemp(){
@@ -150,7 +152,7 @@ function subirEditadoT(){
     $detalles = $_POST["detalles"];
     $this->modelo->editarTemp($id_safe, $id_temp, $cant_caps, $detalles);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sTemporadas');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sTemporadas");
 }
 
 //---------------------------------------------------------------------------
@@ -165,15 +167,15 @@ function cargarEpi(){
   if(isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
      isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
      isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
-    $id_episodio = $_POST["id_episodio"];
-    $id_temporada = $_POST["id_temporada"];
-    $nombre = $_POST["nombre"];
-    $duracion = $_POST["duracion"];
-    $detalles = $_POST["detalles"];
-    $nro_episodio = $_POST["nro_episodio"];
-    $this->modelo->cargarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+      $id_episodio = $_POST["id_episodio"];
+      $id_temporada = $_POST["id_temporada"];
+      $nombre = $_POST["nombre"];
+      $duracion = $_POST["duracion"];
+      $detalles = $_POST["detalles"];
+      $nro_episodio = $_POST["nro_episodio"];
+      $this->modelo->cargarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sEpisodios");
 }
 
 function eliminarEpi(){
@@ -182,7 +184,7 @@ function eliminarEpi(){
     $id_episodio = $_POST["id_episodio"];
     $this->modelo->eliminarEpi($id_episodio);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sEpisodios");
 }
 
 function editarEpi(){
@@ -190,13 +192,13 @@ function editarEpi(){
   if(isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
      isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
      isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
-    $id_episodio = $_POST["id_episodio"];
-    $id_temporada = $_POST["id_temporada"];
-    $nombre = $_POST["nombre"];
-    $duracion = $_POST["duracion"];
-    $detalles = $_POST["detalles"];
-    $nro_episodio = $_POST["nro_episodio"];
-    $this->vista->editarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+      $id_episodio = $_POST["id_episodio"];
+      $id_temporada = $_POST["id_temporada"];
+      $nombre = $_POST["nombre"];
+      $duracion = $_POST["duracion"];
+      $detalles = $_POST["detalles"];
+      $nro_episodio = $_POST["nro_episodio"];
+      $this->vista->editarEpi($id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
   }
 }
 
@@ -205,16 +207,16 @@ function subirEditadoE(){
   if(isset($_POST["id_safe"]) && isset($_POST["id_episodio"]) && isset($_POST["id_temporada"]) &&
      isset($_POST["nombre"]) && isset($_POST["duracion"]) &&
      isset($_POST["detalles"]) && isset($_POST["nro_episodio"])){
-    $id_safe = $_POST["id_safe"];
-    $id_episodio = $_POST["id_episodio"];
-    $id_temporada = $_POST["id_temporada"];
-    $nombre = $_POST["nombre"];
-    $duracion = $_POST["duracion"];
-    $detalles = $_POST["detalles"];
-    $nro_episodio = $_POST["nro_episodio"];
-    $this->modelo->editarEpi($id_safe, $id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
+        $id_safe = $_POST["id_safe"];
+        $id_episodio = $_POST["id_episodio"];
+        $id_temporada = $_POST["id_temporada"];
+        $nombre = $_POST["nombre"];
+        $duracion = $_POST["duracion"];
+        $detalles = $_POST["detalles"];
+        $nro_episodio = $_POST["nro_episodio"];
+        $this->modelo->editarEpi($id_safe, $id_episodio, $id_temporada, $nombre, $duracion, $detalles, $nro_episodio);
   }
-  header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado/sEpisodios');
+  header("Location:".ConfigUrl::$BASE_URL."/admin/logueado/sEpisodios");
 }
 
 }

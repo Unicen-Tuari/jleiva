@@ -1,4 +1,4 @@
-<div class="row Fondo"> <!-- Imagenes -->
+<div class="row"> <!-- Imagenes -->
   <div class="col-xm-12 col-md-12" id="Galeria">
     <div id="myCarouselImg" class="carousel slide CarouselWidth center-block panel" data-ride="carousel">
         <!-- Indicators -->

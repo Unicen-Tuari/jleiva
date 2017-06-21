@@ -3,6 +3,8 @@ require_once('Views/ViewLogin.php');
 require_once('Models/ModelLogin.php');
 require_once('Controllers/ControllerAdmin.php');
 
+require_once('config/configUrl.php');
+
 class ControllerLogin
 {
   private $vista;
@@ -29,13 +31,13 @@ class ControllerLogin
       $password = $_POST["password"];
     }
     $usuario = $this->modelo->GetUsuario($email);
-    $hash = $usuario["password"];
-    if (password_verify($password, $hash) == 0){
+    $hash = password_hash($usuario["password"], PASSWORD_BCRYPT);
+    if (password_verify($password, $hash)){
       session_start();
       $_SESSION['logueado'] = true;
-      header('Location: http://127.0.0.1/web-1/jleiva/admin/logueado');
+      header("Location:".ConfigUrl::$BASE_URL."/admin/logueado");
     }else{
-      header('Location: http://127.0.0.1/web-1/jleiva/admin');
+      header("Location:".ConfigUrl::$BASE_URL."/admin");
     }
   }
 

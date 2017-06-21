@@ -252,7 +252,12 @@ if(!isset($_REQUEST[configApp::$ACTION])) {
     $url = parseUrl($_REQUEST[configApp::$ACTION]);
     switch ($url[configApp::$RESOURCE]){
       case configApp::$USER:
-        gestionUsuario($url);
+          if(isset($url[configApp::$TEMPORADA])){
+            gestionUsuario($url);
+          }else{
+            $ControllerHome = new ControllerHome();
+            $ControllerHome->mostrarHome();
+          }
         break;
 
       case configApp::$ADMIN:

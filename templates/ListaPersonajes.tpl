@@ -9,10 +9,10 @@
     </div>
   </div>
 </div>
-<div class="row PanelColor"> <!-- Personajes -->
+<div class="row Fondo"> <!-- Personajes -->
   <div class="col-xm-12 col-md-12">
     {foreach from=$List_Pers item=$Pers}
-      <div id= "Galeria{$Pers['id_personaje']}" class="col-xm-12 col-md-6 well">
+      <div id= "Galeria{$Pers['id_personaje']}" class="col-xm-12 col-md-6">
           <h1>{$Pers['detalles']}</h1>
           <img src="images/profile/{$Pers['titulo']}" class="img-rounded center-block" alt="{$Pers['detalles']}">
           <p>{$Pers['Descripcion']}</p>
