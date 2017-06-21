@@ -8,7 +8,7 @@
       <div class="form-group">
         <textarea class="form-control" rows="5" name="comentario" placeholder="Comentario"></textarea>
       </div>
-      <button href="temporada1" type="submit" class="center-block btn">Publicar</button>
+      <button href="#" type="submit" class="center-block btn">Publicar</button>
     </form>
   </div>
   <div class="col-xm-10 col-xm-offset-1 col-md-4 PanelColor well"> <!-- Evaluar -->

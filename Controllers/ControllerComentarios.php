@@ -34,6 +34,6 @@ if(isset($_GET["nombre"]) && isset($_GET["comentario"])){
   $comentario = $_GET["comentario"];
   $modelo = new ModelComentarios();
   $modelo->Guardar_Comentario($nombre, $comentario);
-  header("Location:".ConfigUrl::$BASE_URL."/jleiva/spaceDandy/temporada/1");
+  header("Location:".ConfigUrl::$BASE_URL."/spaceDandy/temporada/1");
 }
 ?>
